@@ -11,7 +11,7 @@ function login() {
 
   if (email === "admin@ccp.com" && pass === "123456") {
     localStorage.setItem("user", JSON.stringify({ email }));
-    window.location.href = "/dashboard.html";
+    window.location.href = "dashboard.html";
   } else {
     error.style.display = "block";
     error.innerText = "Credenciales incorrectas";
