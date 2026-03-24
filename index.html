@@ -1,37 +1,60 @@
-function login() {
-const email = document.getElementById('email').value;
-const pass = document.getElementById('password').value;
-const error = document.getElementById('error');
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Login - CCP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
-if (!email || !pass) {
-    error.style.display = 'block';
-    error.innerText = "Completa todos los campos";
-    return;
-}
+  <style>
+    * { box-sizing: border-box; font-family: Arial; }
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+      url('https://images.unsplash.com/photo-1581092919535-7146ff1a5904') no-repeat center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .box {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      width: 350px;
+      text-align: center;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .error { color: red; display: none; }
+  </style>
+</head>
 
-// Simulación de autenticación 2
-if (email === "admin@ccp.com" && pass === "123456") {
-    localStorage.setItem("user", JSON.stringify({ email }));
-    window.location.href = "/dashboard.html";
-} else {
-    error.style.display = 'block';
-    error.innerText = "Credenciales incorrectas";
-}
-```
+<body>
 
-}
+<div class="box">
+  <h2>Iniciar sesión</h2>
 
-// Protección de rutas
-function checkAuth() {
-const user = localStorage.getItem("user");
-if (!user) {
-window.location.href = "/";
-}
-}
+  <input type="email" id="email" placeholder="Correo">
+  <input type="password" id="password" placeholder="Contraseña">
 
-// Logout
-function logout() {
-localStorage.removeItem("user");
-window.location.href = "/";
-}
+  <button onclick="login()">Entrar</button>
+
+  <div id="error" class="error"></div>
+</div>
+
+<!-- 👇 AQUÍ SE CONECTA EL JS -->
+<script src="/app.js"></script>
+
+</body>
+</html>
