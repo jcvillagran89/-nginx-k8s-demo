@@ -19,7 +19,7 @@ if (isset($_SESSION['user'])) {
 <div class="login-container">
   <h2>Iniciar sesión</h2>
 
-  <form method="POST" action="./auth.php">
+  <form method="POST" action="/gitlab/auth.php">
     <input type="text" name="email" placeholder="Correo" required>
     <input type="password" name="password" placeholder="Contraseña" required>
 
