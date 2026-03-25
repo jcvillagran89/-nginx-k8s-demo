@@ -23,7 +23,7 @@ if (isset($_SESSION['user'])) {
     <input type="text" name="email" placeholder="Correo" required>
     <input type="password" name="password" placeholder="Contraseña" required>
 
-    <button type="submit">Entrar</button>
+    <button type="submit">Entrar 2</button>
   </form>
 
   <?php if (isset($_GET['error'])): ?>
